@@ -1,3 +1,5 @@
+# La gráfica de la función f(x) = |1 - x^2| + 3
+
 import numpy as np
 import matplotlib.pyplot as plt
 
