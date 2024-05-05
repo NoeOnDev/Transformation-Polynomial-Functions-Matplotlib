@@ -1,4 +1,3 @@
-# This script shows how to shift the x-axis to the left in a graph.
 # The graph of the function F(x) = (x + 2)^2 is shown.
 
 import numpy as np

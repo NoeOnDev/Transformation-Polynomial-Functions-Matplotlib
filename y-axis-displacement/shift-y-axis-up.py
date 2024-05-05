@@ -1,4 +1,3 @@
-# This script shows how to shift the y-axis up to the up of the graph.
 # The graph of the function F(x) = x^2+2 is shown.
 
 import numpy as np
