@@ -1,19 +1,30 @@
-# The graph of the function F(x) = x^2 is shown.
-
 import numpy as np
 import matplotlib.pyplot as plt
 
-def func(x):
+def func1(x):
+    return x ** 2 + 2
+
+def func2(x):
     return x ** 2
 
+def func3(x):
+    return x ** 2 - 2
+
+functions = [func1, func2, func3]
+colors = ['red', 'blue', 'black']
+labels = ['F(x) = x^2 + 2', 'F(x) = x^2', 'F(x) = x^2 - 2']
+
 x = np.linspace(-5, 5, 400)
-y = func(x)
 
 plt.figure(figsize=(8, 6))
-plt.plot(x, y, color='black')
+
+for func, color, label in zip(functions, colors, labels):
+    y = func(x)
+    plt.plot(x, y, color=color, label=label)
+
 plt.xlabel('', fontsize=14)
 plt.ylabel('', fontsize=14)
-plt.title('Gráfica de la función F(x) = x^2', fontsize=16)
+plt.title('Gráficas de las funciones', fontsize=16)
 plt.grid(True)
 
 ax = plt.gca()
@@ -34,4 +45,5 @@ y_labels = [str(i) if i != 0 else '' for i in y_ticks]
 
 plt.xticks(x_ticks, x_labels)
 plt.yticks(y_ticks, y_labels)
+plt.legend()
 plt.show()
