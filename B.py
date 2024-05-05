@@ -1,4 +1,4 @@
-# Description: Gráfica de la función f(x) = |1 - x^2| + 3
+# The graph of the function f(x) = |1 - x^2| + 3 is shown.
 
 import numpy as np
 import matplotlib.pyplot as plt
