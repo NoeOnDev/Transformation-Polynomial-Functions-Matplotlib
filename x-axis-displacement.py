@@ -16,19 +16,21 @@ labels = ['F(x) = (x+2)^2', 'F(x) = x^2', 'F(x) = (x-2)^2']
 
 x_values = np.linspace(-10, 10, 400)
 
-plt.figure(figsize=(8, 6))
-for func, color, label in zip(functions, colors, labels):
-    y_values = [func(x) for x in x_values]
-    plt.plot(x_values, y_values, color=color, label=label)
+fig, axs = plt.subplots(3, figsize=(8, 12))
 
-plt.xlabel('x', fontsize=14)
-plt.ylabel('F(x)', fontsize=14)
-plt.title('Gráficas de las funciones', fontsize=16)
-plt.grid(True)
-plt.axhline(y=0, color='k', linestyle='--')
-plt.axvline(x=0, color='k', linestyle='--')
-plt.xlim(-4, 4)
-plt.xticks(np.arange(-4, 5, 1))
-plt.ylim(0, 5)
-plt.legend()
+for ax, func, color, label in zip(axs, functions, colors, labels):
+    y_values = [func(x) for x in x_values]
+    ax.plot(x_values, y_values, color=color, label=label)
+    ax.set_xlabel('x', fontsize=14)
+    ax.set_ylabel('F(x)', fontsize=14)
+    ax.set_title(label, fontsize=16)
+    ax.grid(True)
+    ax.axhline(y=0, color='k', linestyle='--')
+    ax.axvline(x=0, color='k', linestyle='--')
+    ax.set_xlim(-4, 4)
+    ax.set_xticks(np.arange(-4, 5, 1))
+    ax.set_ylim(0, 5)
+    ax.legend()
+
+plt.tight_layout()
 plt.show()
