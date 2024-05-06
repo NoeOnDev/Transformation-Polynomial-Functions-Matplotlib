@@ -18,8 +18,6 @@ plt.title('Gráfica de la función f(x) = |1 - x^2| + 3', fontsize=16)
 plt.grid(True)
 plt.axhline(y=0, color='k', linestyle='--')
 plt.axvline(x=0, color='k', linestyle='--')
-
 plt.ylim(0, 10)
 plt.yticks(np.arange(0, 11, 1))
-
 plt.show()
