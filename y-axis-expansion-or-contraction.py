@@ -29,7 +29,7 @@ for ax, func, color, label in zip(axs, functions, colors, labels):
     ax.axvline(x=0, color='k', linestyle='--')
     ax.set_xlim(-2*np.pi, 2*np.pi)
     ax.set_xticks(np.arange(-2*np.pi, 2.5*np.pi, 0.5*np.pi))
-    ax.set_ylim(-2.5, 2.5)  # Ajuste el límite y para acomodar el rango de la función 2*cos(x)
+    ax.set_ylim(-2.5, 2.5)
     ax.legend()
 
 plt.tight_layout()
