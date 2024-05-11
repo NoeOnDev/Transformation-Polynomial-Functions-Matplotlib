@@ -16,34 +16,36 @@ labels = ['F(x) = x^2 + 2', 'F(x) = x^2', 'F(x) = x^2 - 2']
 
 x = np.linspace(-5, 5, 400)
 
-plt.figure(figsize=(8, 6))
+fig, axs = plt.subplots(1, 3, figsize=(18, 6))  # Modificado aquí
 
-for func, color, label in zip(functions, colors, labels):
+for ax, func, color, label in zip(axs, functions, colors, labels):
     y = func(x)
-    plt.plot(x, y, color=color, label=label)
+    ax.plot(x, y, color=color, label=label)
+    ax.set_xlabel('', fontsize=14)
+    ax.set_ylabel('', fontsize=14)
+    ax.set_title('Gráficas de las funciones', fontsize=16)
+    ax.grid(True)
 
-plt.xlabel('', fontsize=14)
-plt.ylabel('', fontsize=14)
-plt.title('Gráficas de las funciones', fontsize=16)
-plt.grid(True)
+    ax.spines['left'].set_position('center')
+    ax.spines['bottom'].set_position('center')
+    ax.spines['right'].set_color('none')
+    ax.spines['top'].set_color('none')
+    ax.xaxis.set_ticks_position('bottom')
+    ax.yaxis.set_ticks_position('left')
 
-ax = plt.gca()
-ax.spines['left'].set_position('center')
-ax.spines['bottom'].set_position('center')
-ax.spines['right'].set_position('center')
-ax.spines['top'].set_position('center')
-ax.xaxis.set_ticks_position('bottom')
-ax.yaxis.set_ticks_position('left')
+    ax.set_xlim(-5, 5)
+    ax.set_ylim(-5, 5)
 
-plt.xlim(-5, 5)
-plt.ylim(-5, 5)
+    x_ticks = np.arange(-5, 6, 1)
+    x_labels = [str(i) if i != 0 else '' for i in x_ticks]
+    y_ticks = np.arange(-5, 6, 1)
+    y_labels = [str(i) if i != 0 else '' for i in y_ticks]
 
-x_ticks = np.arange(-5, 6, 1)
-x_labels = [str(i) if i != 0 else '' for i in x_ticks]
-y_ticks = np.arange(-5, 6, 1)
-y_labels = [str(i) if i != 0 else '' for i in y_ticks]
+    ax.set_xticks(x_ticks)
+    ax.set_xticklabels(x_labels)
+    ax.set_yticks(y_ticks)
+    ax.set_yticklabels(y_labels)
+    ax.legend()
 
-plt.xticks(x_ticks, x_labels)
-plt.yticks(y_ticks, y_labels)
-plt.legend()
+plt.tight_layout()
 plt.show()
