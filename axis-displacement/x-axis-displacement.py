@@ -16,7 +16,7 @@ labels = ['F(x) = (x+2)^2', 'F(x) = x^2', 'F(x) = (x-2)^2']
 
 x_values = np.linspace(-10, 10, 400)
 
-fig, axs = plt.subplots(3, figsize=(8, 12))
+fig, axs = plt.subplots(1, 3, figsize=(18, 6))  # Modificado aquí
 
 for ax, func, color, label in zip(axs, functions, colors, labels):
     y_values = [func(x) for x in x_values]
