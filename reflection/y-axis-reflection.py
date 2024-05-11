@@ -13,7 +13,7 @@ labels = ['F(x) = x', 'F(x) = -x']
 
 x = np.linspace(-5, 5, 400)
 
-fig, axs = plt.subplots(1, 2, figsize=(12, 6))  # Modificado aquí
+fig, axs = plt.subplots(1, 2, figsize=(12, 6))
 
 for ax, func, color, label in zip(axs, functions, colors, labels):
     y = func(x)

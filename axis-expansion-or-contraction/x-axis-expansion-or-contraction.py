@@ -16,7 +16,7 @@ labels = ['F(x) = cos(1/2 x)', 'F(x) = cos(x)', 'F(x) = cos(2x)']
 
 x_values = np.linspace(-2*np.pi, 2*np.pi, 400)
 
-fig, axs = plt.subplots(3, figsize=(8, 12))
+fig, axs = plt.subplots(1, 3, figsize=(18, 6))
 
 for ax, func, color, label in zip(axs, functions, colors, labels):
     y_values = func(x_values)
